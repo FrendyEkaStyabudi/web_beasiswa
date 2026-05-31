@@ -1,7 +1,9 @@
 # Sistem Pendaftaran Beasiswa Online
-**Universitas Nusantara**
+**Universitas Nusantara** | FR.IA.02 Junior Web Developer
 
-## Struktur Direktori
+---
+
+## 📁 Struktur Direktori
 
 ```
 beasiswa/
@@ -30,6 +32,7 @@ beasiswa/
 ### Penjelasan Setiap File
 
 | File | Peran |
+|---|---|
 | `index.php` | Menampilkan 3 pilihan beasiswa, status kuota, progress bar, info IPK |
 | `daftar.php` | Form pendaftaran dengan validasi server-side + upload berkas |
 | `hasil.php` | Tabel semua pendaftar dengan seluruh kolom + status ajuan |
@@ -41,7 +44,9 @@ beasiswa/
 | `css/style.css` | Design system lengkap: CSS variables, layout, komponen, responsif |
 | `img/favicon.svg` | Icon graduation SVG berwarna putih untuk tab browser |
 
-## Cara Setup & Menjalankan
+---
+
+## 🚀 Cara Setup & Menjalankan
 
 ### Prasyarat
 - **XAMPP** versi 7.4+ (sudah include Apache, MySQL, PHP)
@@ -95,12 +100,16 @@ chmod 755 uploads/
 ```
 http://localhost/beasiswa/
 ```
-## Struktur Database
+
+---
+
+## 🗄️ Struktur Database
 
 ### Database: `db_beasiswa`
 ### Tabel: `pendaftar`
 
 | Kolom | Tipe Data | Keterangan |
+|---|---|---|
 | `id` | INT UNSIGNED AUTO_INCREMENT | Primary key |
 | `kode_daftar` | VARCHAR(40) UNIQUE | ID unik pendaftar format BSW-xxxxxxx |
 | `nama` | VARCHAR(150) | Nama lengkap mahasiswa |
@@ -114,10 +123,13 @@ http://localhost/beasiswa/
 | `tanggal_daftar` | DATETIME | Timestamp pendaftaran (otomatis) |
 | `status_ajuan` | VARCHAR(50) | Default: "Belum Diverifikasi" |
 
-## Library & Teknologi yang Digunakan
+---
+
+## 📚 Library & Teknologi yang Digunakan
 
 ### Backend
 | Library | Jenis | Kegunaan |
+|---|---|---|
 | **PHP 7.4+** | Bahasa pemrograman | Logic server-side, prosedural |
 | **PDO** | PHP Extension (built-in) | Koneksi MySQL dengan prepared statement |
 | **MySQL** | Database | Penyimpanan data pendaftar |
@@ -131,6 +143,7 @@ http://localhost/beasiswa/
 
 ### Frontend
 | Library | Jenis | Kegunaan |
+|---|---|---|
 | **HTML5** | Markup | Struktur halaman web |
 | **CSS3** | Stylesheet | Tampilan & layout (custom, tanpa framework) |
 | **JavaScript Vanilla** | Script | Interaksi UI: file picker, reset form, fokus otomatis |
@@ -139,17 +152,20 @@ http://localhost/beasiswa/
 
 ### Tools & Environment
 | Tool | Kegunaan |
+|---|---|
 | **XAMPP** | Local server (Apache + MySQL + PHP) |
 | **phpMyAdmin** | GUI manajemen database MySQL |
 | **Browser** | Testing & tampilan aplikasi |
 
 ### Tidak Menggunakan
-- Framework PHP (Laravel, CodeIgniter, dll)
-- Framework CSS (Bootstrap, Tailwind, dll)
-- Library JavaScript (jQuery, Vue, React, dll)
-- Composer / npm
+- ❌ Framework PHP (Laravel, CodeIgniter, dll)
+- ❌ Framework CSS (Bootstrap, Tailwind, dll)
+- ❌ Library JavaScript (jQuery, Vue, React, dll)
+- ❌ Composer / npm
 
-## Konfigurasi IPK
+---
+
+## 🔧 Konfigurasi IPK
 
 IPK diambil otomatis dari sistem (simulasi via PHP Session). Setiap refresh halaman fresh, IPK berganti acak antara dua nilai simulasi:
 
@@ -165,34 +181,70 @@ $_ipk_options = [3.4, 2.9];  // ubah nilai di sini untuk simulasi berbeda
 - **Klik tombol Batal** → Redirect GET ke `daftar.php`, IPK di-random ulang
 - **Batas IPK** → Tidak bisa melebihi 4.00 dan tidak bisa di bawah 0.00
 
-## Fitur Aplikasi
+---
+
+## 📋 Fitur Aplikasi
 
 | Halaman | Fitur |
+|---|---|
 | Pilihan Beasiswa | 3 kartu beasiswa, syarat, manfaat, progress bar kuota real-time |
 | Daftar Beasiswa | Form registrasi, validasi lengkap, upload berkas, indikator IPK |
 | Hasil Pendaftaran | Tabel semua pendaftar, status ajuan, info keterangan |
 
 ### Checklist Fitur:
-- Validasi email format (nama@domain.com)
-- Validasi nomor HP (10-13 digit angka, tanpa spinner up/down)
-- Pilihan semester 1-8 via dropdown
-- IPK otomatis dari sistem (simulasi session, random tiap refresh)
-- Form dinonaktifkan jika IPK di bawah 3.0
-- Kursor otomatis ke pilihan beasiswa jika IPK memenuhi syarat
-- Upload berkas (PDF, JPG, PNG, ZIP — maks 5MB)
-- Status ajuan "Belum Diverifikasi" otomatis tersimpan saat daftar
-- Progress bar kuota per jenis beasiswa (real-time dari database)
-- Tombol daftar dinonaktifkan & kartu memudar jika kuota penuh
-- Favicon SVG graduation icon (warna putih)
-- Desain responsif (mobile-friendly)
-- Proteksi SQL Injection via PDO Prepared Statement
-- Proteksi XSS via htmlspecialchars()
+- ✅ Validasi email format (nama@domain.com)
+- ✅ Validasi nomor HP (10-13 digit angka, tanpa spinner up/down)
+- ✅ Pilihan semester 1-8 via dropdown
+- ✅ IPK otomatis dari sistem (simulasi session, random tiap refresh)
+- ✅ Form dinonaktifkan jika IPK di bawah 3.0
+- ✅ Kursor otomatis ke pilihan beasiswa jika IPK memenuhi syarat
+- ✅ Upload berkas (PDF, JPG, PNG, ZIP — maks 5MB)
+- ✅ Status ajuan "Belum Diverifikasi" otomatis tersimpan saat daftar
+- ✅ Progress bar kuota per jenis beasiswa (real-time dari database)
+- ✅ Tombol daftar dinonaktifkan & kartu memudar jika kuota penuh
+- ✅ Favicon SVG graduation icon (warna putih)
+- ✅ Desain responsif (mobile-friendly)
+- ✅ Proteksi SQL Injection via PDO Prepared Statement
+- ✅ Proteksi XSS via htmlspecialchars()
 
-## Jenis Beasiswa
+---
+
+## 🧩 Jenis Beasiswa
 
 | # | ID | Nama | Kuota | Manfaat |
+|---|---|---|---|---|
 | 1 | `akademik` | Beasiswa Akademik Prestasi | 20 orang | Bebas SPP 1 semester + uang saku Rp 500.000/bulan |
 | 2 | `non_akademik` | Beasiswa Non-Akademik (Bakat & Minat) | 10 orang | Potongan SPP 50% + Rp 1.000.000/semester |
 | 3 | `kurang_mampu` | Beasiswa Mahasiswa Berprestasi Kurang Mampu | 15 orang | Bebas SPP penuh + biaya hidup Rp 750.000/bulan |
 
 Semua beasiswa mensyaratkan **IPK minimal 3.0**.
+
+---
+
+## 🔒 Keamanan
+
+| Ancaman | Teknik Serangan | Penanganan di Project |
+|---|---|---|
+| SQL Injection | Input berbahaya di form dikirim ke query SQL | PDO Prepared Statement dengan parameter binding |
+| XSS | Script berbahaya disisipkan di input, dieksekusi browser lain | `htmlspecialchars()` via fungsi `bersihkan()` di semua output |
+| Upload Berbahaya | File executable/script diupload ke server | Whitelist ekstensi (pdf, jpg, png, zip) + cek ukuran maks 5MB |
+| Input Tidak Valid | Data tidak sesuai format dikirim ke server | Validasi server-side: email, HP, semester, IPK minimal |
+
+---
+
+## 📦 Unit Kompetensi yang Dipenuhi
+
+| Kode Unit | Judul |
+|---|---|
+| J.620100.005.02 | Mengimplementasikan User Interface |
+| J.620100.010.01 | Menerapkan Perintah Eksekusi Bahasa Pemrograman |
+| J.620100.015.01 | Menyusun Fungsi, File/Sumber Daya dalam Organisasi Rapi |
+| J.620100.016.01 | Menulis Kode dengan Prinsip Guidelines & Best Practices |
+| J.620100.017.02 | Mengimplementasikan Pemrograman Terstruktur |
+| J.620100.019.02 | Menggunakan Library atau Komponen Pre-Existing |
+
+---
+
+**Author:** Tim Pengembang
+**Versi:** 2.0 (MySQL/PDO)
+**Tanggal:** 2024-01-01
