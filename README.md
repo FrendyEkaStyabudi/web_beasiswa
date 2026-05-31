@@ -115,7 +115,7 @@ http://localhost/beasiswa/
 
 ---
 
-## 🗄️ Struktur Database
+## Struktur Database
 
 ### Database: `db_beasiswa`
 
